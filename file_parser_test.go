@@ -52,15 +52,15 @@ func TestParseData(t *testing.T) {
 			if err != nil {
 				errMsg = err.Error()
 			}
-			if diff := cmp.Diff(out, d.out); diff != "" {
+			if diff := cmp.Diff(d.out, out); diff != "" {
 				t.Error(diff)
 			}
-			if diff := cmp.Diff(errMsg, d.errMsg); diff != "" {
+			if diff := cmp.Diff(d.errMsg, errMsg); diff != "" {
 				t.Error(diff)
 			}
 			//if err == nil {
 			//	roundTrip := ToData(out)
-			//	if diff := cmp.Diff(roundTrip, d.in); diff != "" {
+			//	if diff := cmp.Diff(d.in, roundTrip); diff != "" {
 			//		t.Error(diff)
 			//	}
 			//}
